@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edulex</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+  </head>
+
+  <body>
+
+    <header>
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">one</a></li>
+      <li><a href="#!">two</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">three</a></li>
+    </ul>
+
+    <ul id="dropdown2" class="dropdown-content">
+      <li><a href="#!">one</a></li>
+      <li><a href="#!">two</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">three</a></li>
+    </ul>
+
+      <nav class="blue darken-4 z-depth-2">
+        <div class="container">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">edulex.live</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Log in</a></li>
+            <li><a href="#">Join for free</a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dark Archer<i class="material-icons right">arrow_drop_down</i></a></li>
+          </ul>
+        </div>
+        </div>
+      
+      </nav>
+
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Log in</a></li>
+        <li><a href="#">Join for free</a></li>
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Dark Archer<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+
+
+    </header>
+
+    <main>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
+
+    <footer class="page-footer blue darken-4">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">edulex</h5>
+            <p class="grey-text text-lighten-4">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+            </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Social</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Google Plus</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2020 Copyright edulex
+        <%= link_to "About Us", pages_about_path, :class => "grey-text text-lighten-4 right" %>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+  <script>
+     $('.sidenav').sidenav();
+     $(".dropdown-trigger").dropdown();
+  </script>
+</html>
