@@ -1,13 +1,13 @@
 <header>
     <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">My Profile</a></li>
+        <li><%= link_to "My Profile", edit_user_registration_path %></li>
         <li><a href="#!">My Courses</a></li>
         <li class="divider"></li>
         <li> <%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
     </ul>
 
     <ul id="dropdown2" class="dropdown-content">
-        <li><a href="#!">My Profile</a></li>
+        <li><%= link_to "My Profile", edit_user_registration_path %></li>
         <li><a href="#!">My Courses</a></li>
         <li class="divider"></li>
         <li> <%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
@@ -24,7 +24,7 @@
                 <li><%= link_to "Log in", new_user_session_path %> </li>
                 <li><%= link_to "Join for free", new_user_registration_path %></li>
             <% else %>
-                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><%= current_user.email%><i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><%= current_user.name%><i class="material-icons right">arrow_drop_down</i></a></li>
             <% end %>
             </ul>
         </div>
@@ -37,7 +37,7 @@
             <li><%= link_to "Log in", new_user_session_path %> </li>
             <li><%= link_to "Join for free", new_user_registration_path %></li>
         <% else %>
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown2"><%= current_user.email%><i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown2"><%= current_user.name%><i class="material-icons right">arrow_drop_down</i></a></li>
         <% end %>
     </ul>
 </header>
